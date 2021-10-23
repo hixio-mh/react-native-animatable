@@ -9,7 +9,9 @@
     "jest:watch": "npm run jest -- --watch",
     "lint": "./node_modules/.bin/eslint ./*.js",
     "test": "npm run lint && npm run jest",
-    "format": "./node_modules/.bin/prettier --write {,definitions/,__tests__/}*.js"
+    "format": "./node_modules/.bin/prettier --write {,definitions/,__tests__/}*.js",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "keywords": [
     "react-native",
@@ -72,6 +74,8 @@
     "react-test-renderer": "16.9.0"
   },
   "dependencies": {
-    "prop-types": "^15.7.2"
-  }
+    "prop-types": "^15.7.2",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
